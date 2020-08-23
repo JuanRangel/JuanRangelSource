@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="referrer" content="always">
-        <link rel="canonical" href="/">
-        <meta name="description" content="My personal site">
-        <title>Juan Rangel</title>
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=d7a7094c4ae2a7f7ecc1">
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-            <style>
+@extends('_layouts.master')
+
+@push('styles')
+    <style>
         .star {
             position: absolute;
             width: 2px;
@@ -18,7 +9,7 @@
             border-radius: 5px;
         }
 
-        @keyframes  twinkle {
+        @keyframes twinkle {
             0% {
                 transform: scale(1, 1);
                 background: rgba(255, 255, 255, 0);
@@ -39,9 +30,10 @@
             }
         }
     </style>
-    </head>
-    <body>
-            <section
+@endpush
+
+@section('body')
+    <section
             class="homescreen m-0 flex flex-col w-screen justify-center bg-gray-800 h-screen text-gray-100 "
     >
         <nav>
@@ -57,8 +49,10 @@
             <span id="changingword" class="text-teal-400">HTML</span>
         </h1>
     </section>
-        <script src="/assets/build/js/main.js?id=16f1c8d033271b208992"></script>
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+@endsection
+
+@push('scripts')
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script>
         (function(){
             var words = [
@@ -97,6 +91,4 @@
             $('.homescreen').append(star);
         }
     </script>
-    </body>
-
-</html>
+@endpush
